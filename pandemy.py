@@ -71,7 +71,7 @@ def spread():
 
     for player1 in players:
         for player2 in players:
-            # Проверка двух условий и наличия больного
+            # Проверка расстояния между человечками и наличия больного
             ill_check = (player1.is_impostor or player2.is_impostor) and not (player1.is_impostor and player2.is_impostor)
             
             if (fabs(player1.x - player2.x) <= Person.size and fabs(player1.y - player2.y) <= Person.size) and ill_check:
