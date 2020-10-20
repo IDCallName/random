@@ -310,7 +310,7 @@ def updatePlayers():
             player.temp_immunity -= 1
 
         if player.is_impostor:
-            cure_dice = random.choice(range(0, int(20000/(player.immunity + player.temp_immunity/10000)))) == 0
+            cure_dice = random.choice(range(0, int(5000/(player.immunity + player.temp_immunity/10000)))) == 0
 
             if cure_dice:
                 changeFillColor(player.box, "white")
@@ -323,7 +323,7 @@ def updatePlayers():
 
                 ill_amount -= 1
             
-            death_dice = random.choice(range(0, int(30000*(player.immunity + player.temp_immunity/10000)))) == 0
+            death_dice = random.choice(range(0, int(15000*(player.immunity + player.temp_immunity/10000)))) == 0
 
             if death_dice:
                 changeFillColor(player.box, "black")
