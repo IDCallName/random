@@ -294,16 +294,19 @@ def updatePlayers():
     for player in players:
         player.cooldown_counter -= 1
 
-        if (player.x >= player.house_x*10 and player.x < player.house_x*10+10-Person.size) and (player.y >= player.house_y*10 and player.y < player.house_y*10+10-Person.size) and player.is_isolating:
-            if not player.is_impostor:
-                changeFillColor(player.box, "lime")
+        if not player.is_dead:
+            if (player.x >= player.house_x*10 and player.x < player.house_x*10+10-Person.size) and (player.y >= player.house_y*10 and player.y < player.house_y*10+10-Person.size) and player.is_isolating:
+                if not player.is_impostor:
+                    changeFillColor(player.box, "lime")
+                else:
+                    changeFillColor(player.box, "orange")
             else:
-                changeFillColor(player.box, "orange")
+                if not player.is_impostor:
+                    changeFillColor(player.box, "white")
+                else:
+                    changeFillColor(player.box, "red")
         else:
-            if not player.is_impostor:
-                changeFillColor(player.box, "white")
-            else:
-                changeFillColor(player.box, "red")
+            changeFillColor(player.box, "black")
         
         
         if player.temp_immunity > 0:
