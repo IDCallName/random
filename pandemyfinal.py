@@ -294,7 +294,7 @@ def updatePlayers():
     for player in players:
         player.cooldown_counter -= 1
 
-        if (player.x > player.house_x*10 and player.x < player.house_x*10+10-Person.size) and (player.y > player.house_y*10 and player.y < player.house_y*10+10-Person.size) and player.is_isolating:
+        if (player.x >= player.house_x*10 and player.x < player.house_x*10+10-Person.size) and (player.y >= player.house_y*10 and player.y < player.house_y*10+10-Person.size) and player.is_isolating:
             if not player.is_impostor:
                 changeFillColor(player.box, "lime")
             else:
