@@ -299,7 +299,11 @@ def updatePlayers():
                 changeFillColor(player.box, "lime")
             else:
                 changeFillColor(player.box, "orange")
-
+        else:
+            if not player.is_impostor:
+                changeFillColor(player.box, "white")
+            else:
+                changeFillColor(player.box, "red")
         
         
         if player.temp_immunity > 0:
